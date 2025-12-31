@@ -21,7 +21,7 @@ crate-type = ["rlib"]
 default = []
 
 [dependencies]
-opus-static-sys = { version = "1.5" }
+opus-static-sys = {git = "https://github.com/canxin121/opus-static-sys"}
 
 [build-dependencies]
 cc = { version = "1.2" }
