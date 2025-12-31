@@ -11,7 +11,13 @@ readme = "README.md"
 homepage = "https://github.com/hedgetechllc/libopusenc-static-sys"
 repository = "https://github.com/hedgetechllc/libopusenc-static-sys"
 keywords = ["libopusenc", "opus", "libopus", "bindings", "ffi"]
-categories = ["encoding", "external-ffi-bindings", "multimedia::audio", "multimedia::encoding", "no-std"]
+categories = [
+  "encoding",
+  "external-ffi-bindings",
+  "multimedia::audio",
+  "multimedia::encoding",
+  "no-std",
+]
 publish = true
 
 [lib]
@@ -21,7 +27,7 @@ crate-type = ["rlib"]
 default = []
 
 [dependencies]
-opus-static-sys = {git = "https://github.com/canxin121/opus-static-sys"}
+opus-static-sys = { git = "https://github.com/canxin121/opus-static-sys", branch = "link_issue" }
 
 [build-dependencies]
 cc = { version = "1.2" }
