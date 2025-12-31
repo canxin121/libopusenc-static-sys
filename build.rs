@@ -43,7 +43,10 @@ fn main() {
   #[cfg(target_os = "windows")]
   builder.flag("/Zl");
   #[cfg(not(target_os = "windows"))]
-  builder.flag("-fvisibility=hidden").flag("-flto");
+  {
+    builder.flag("-fvisibility=hidden");
+    builder.pic(true); // keep archives linkable into PIEs without needing text relocations
+  }
   builder.compile("opusenc");
 
   fs::create_dir_all(dest.join("lib/pkgconfig")).unwrap();
